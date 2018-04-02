@@ -22,9 +22,9 @@ channels = dict()
 print("Dialogs " + str(len(dialogs)))
 i = 0
 for dialog in dialogs:
-    print("Dialog " + str(i)+ " of " + str(len(dialogs)))
+    print("Dialog " + str(i) + " of " + str(len(dialogs)))
     start_time = time.time()
-    messages = client.get_message_history(dialog.input_entity, limit=None)
+    messages = client.get_messages(dialog.input_entity, limit=None)
     print("--- get history function --- "+str(len(messages))+" --- %s seconds ---" % (time.time() - start_time))
     if isinstance(dialog.entity, Channel):
         key = str(dialog.entity.title)
